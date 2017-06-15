@@ -22,6 +22,7 @@ about:
 requirements:
     build:
         - python
+        - perl
     run:
         - python
         - perl
