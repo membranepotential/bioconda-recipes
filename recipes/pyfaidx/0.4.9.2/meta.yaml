@@ -9,7 +9,6 @@ source:
 
 build:
   skip: False
-  noarch: python
   entry_points:
     - faidx = pyfaidx.cli:main
 
