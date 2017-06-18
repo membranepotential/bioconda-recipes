@@ -1,0 +1,45 @@
+package:
+  name: pyfaidx
+  version: "0.4.9.2"
+
+source:
+  fn: pyfaidx-0.4.9.2.tar.gz
+  url: https://pypi.python.org/packages/9c/ff/3aade56f9d4c96ccf2d5cfce301501dff250fb707feee3226474f4ed9e23/pyfaidx-0.4.9.2.tar.gz
+  md5: aba6076be3b658d9fa88ffa2075b9661
+
+build:
+  skip: False
+  noarch: python
+  entry_points:
+    - faidx = pyfaidx.cli:main
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - six
+
+  run:
+    - python
+    - six
+
+test:
+  # Python imports
+  imports:
+    - pyfaidx
+
+  commands:
+    - faidx --help
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://mattshirley.com
+  license: MIT License
+  summary: 'pyfaidx: efficient pythonic random access to fasta subsequences'
